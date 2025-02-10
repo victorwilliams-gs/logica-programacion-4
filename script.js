@@ -2,6 +2,15 @@
 function Generar(){
     const input = Number(document.getElementById("fibonacci").value);
 
+    if (!Number.isInteger(input)){
+        window.alert("Ingrese un numero Entero!");
+        return;
+    }
+    if (input < 0){
+        window.alert("Ingrese un numero Positivo mayor que 0");
+        return;
+    }
+
     let numbers = Fibonacci(Number(input - 1));
 
     let result = numbers.join(", ");
